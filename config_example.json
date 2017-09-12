@@ -1,0 +1,39 @@
+{
+    "env": {
+        "parse": { // PARSE KEYS
+            "app_id": "PARSE_APP_ID",
+            "js_key": "PARSE_JAVASCRIPT_KEY",
+            "client_key": "PARSE_CLIENT_KEY",
+            "master_key": "PARSE_MASTER_KEY",
+            "server_url": "PARSE_SERVER_URL"
+        },
+        "firebase": { // FIREBASE KEYS
+            "apiKey": "FIREBASE_API_KEY",
+            "authDomain": "FIREBASE_AUTH_DOMAIN",
+            "databaseURL": "FIREBASE_DATABASE_URL",
+            "projectId": "FIREBASE_PROJECT_ID",
+            "storageBucket": "FIREBASE_STORAGE_BUCKET",
+            "messagingSenderId": "FIREBASE_MESSAGE_SENDER_ID"
+        },
+        "authProviders": { // set which auth providers are enabled in firebase
+            "facebook": true,
+            "google": false,
+            "github": false,
+            "twitter": false
+        }
+    },
+    "db": {
+        "exclude_fields": [ // fields to exclude from all table migrations
+            "a_field_to_be_exluded_from_all_table_migrations"
+        ],
+        "tables": [ // add an object for each table you want to include
+            {
+                "parse_class": "ParseClassName", // parse table class name
+                "firebase_node": "firebaseNodeName", // firebase node name
+                "exclude_fields": [ // fields to exclude from migration of this parse table
+                    "a_field_to_be_exluded_from_this_table_migration"
+                ]
+            }
+        ]
+    }
+}
